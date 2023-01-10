@@ -13,6 +13,7 @@ export const TodoApp = () => {
     }
 
     const prevTodo = () => {
+        if( todoId === 1 ) return;
         setTodoId( todoId - 1 );
     }
 
@@ -21,7 +22,6 @@ export const TodoApp = () => {
         <h1>Todos / RTK Query </h1>
         <hr />
         <h4>isLoading: { isLoading ? 'True' : 'False' }</h4>
-
         <pre>{ JSON.stringify( todo )}</pre>
 
         {/* <ul>
