@@ -18,5 +18,10 @@ import { FirebaseAuth } from "./config";
 
     } catch (error) {
         console.log(error);
+
+        return {
+            ok: false,
+            errorMessage
+        }
     }
  }
