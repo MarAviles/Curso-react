@@ -1,5 +1,5 @@
 import { Link as RouterLink } from 'react-router-dom'
-import { Button, Grid, TextField, Typography, Link } from "@mui/material"
+import { Button, Grid, TextField, Typography, Link } from "@mui/material";
 import { AuthLayout } from "../layout/AuthLayout"
 import { useForm } from '../../hooks';
 
@@ -17,15 +17,16 @@ const formValidations = {
 
 export const RegisterPage = () => {
 
+  console.log(formValidations);
+
   const { formState, displayName, email, password, onInputChange, 
           isFormValid, displayNameValid, emailValid, passwordValid
         } = useForm(formData, formValidations);
 
   const onSubmit = ( event ) => {
     event.preventDefault();
-    console.log(formState);
   }
-  
+
   return (
     <AuthLayout title='Crear cuenta'>
       <form>
@@ -36,7 +37,7 @@ export const RegisterPage = () => {
                 type='text' 
                 placeholder='Nombre completo'
                 fullWidth
-                name='displayname'
+                name='displayName'
                 value={ displayName }
                 onChange={ onInputChange }
                 error= { displayNameValid }
